@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Listing Genius AI</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <form id="property-form">
+        <h2>Interior</h2>
+        <div class="grid-container">
+          <div class="form-group">
+            <label for="sqft">Square Feet:</label>
+            <input type="number" id="sqft" name="sqft" />
+          </div>
+          <div class="form-group">
+            <label for="bedrooms">Bedrooms:</label>
+            <input type="number" id="bedrooms" name="bedrooms" />
+          </div>
+          <div class="form-group">
+            <label for="full-bathrooms">Full Bathrooms:</label>
+            <input type="number" id="full-bathrooms" name="full-bathrooms" />
+          </div>
+          <div class="form-group">
+            <label for="half-bathrooms">Half Bathrooms:</label>
+            <input type="number" id="half-bathrooms" name="half-bathrooms" />
+          </div>
+          <div class="form-group">
+            <label>Appliances:</label>
+            <div class="array-container" id="appliances">
+              <!-- Array items will be added here via JavaScript -->
+            </div>
+            <button
+              class="add-array-item-button"
+              type="button"
+              id="add-appliance"
+            >
+              Add Appliance
+            </button>
+          </div>
+        </div>
+
+        <h2>Property Details</h2>
+        <div class="grid-container">
+          <div class="form-group">
+            <label for="garage-spaces">Garage Spaces:</label>
+            <input type="number" id="garage-spaces" name="garage-spaces" />
+          </div>
+          <div class="form-group">
+            <label for="levels">Levels:</label>
+            <input type="number" id="levels" name="levels" />
+          </div>
+          <!-- Select home type -->
+          <div class="form-group">
+            <label for="type">Type:</label>
+            <select id="type" name="type">
+              <option value="Single Family">Single Family</option>
+              <option value="Condominium">Condominium</option>
+              <option value="Apartment">Apartment</option>
+              <option value="Townhome">Townhome</option>
+              <option value="Manufactured">Manufactured</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="year">Year:</label>
+            <input type="number" id="year" name="year" />
+          </div>
+          <!-- Select home type -->
+          <!-- Home Type -->
+
+          <!-- End home type -->
+          <div class="form-group">
+            <label>Utilities:</label>
+            <div class="array-container" id="utilities">
+              <!-- Array items will be added here via JavaScript -->
+            </div>
+            <button
+              class="add-array-item-button"
+              type="button"
+              id="add-utility"
+            >
+              Add Utility
+            </button>
+          </div>
+        </div>
+
+        <h2>Notable Features</h2>
+        <p>Items that make this listing unique.</p>
+        <div class="form-group">
+          <label>Features:</label>
+          <div class="array-container" id="features">
+            <!-- Array items will be added here via JavaScript -->
+          </div>
+          <button class="add-array-item-button" type="button" id="add-feature">
+            Add Feature
+          </button>
+        </div>
+
+        <div class="form-group">
+          <button type="button" id="submit-button">Submit</button>
+        </div>
+      </form>
+      <div id="response-container"></div>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>
