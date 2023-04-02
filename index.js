@@ -1,9 +1,11 @@
 require("dotenv").config({ path: __dirname + "/.env" });
 const express = require("express");
 const cors = require("cors");
+const path = require("path");
 const app = express();
 
-const port = 8080;
+const PORT = process.env.PORT || 8080;
+
 app.use(
   express.json({
     limit: "5mb",
@@ -21,8 +23,8 @@ const descriptionRouter = require("./routes/description");
 
 app.use("/stripe", stripeWebhook);
 app.use("/api/descriptions", descriptionRouter);
-app.use(express.static("public"));
+app.use(express.static(path.join(__dirname, "public")));
 
-app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`);
+app.listen(PORT, () => {
+  console.log(`Example app listening at http://localhost:${PORT}`);
 });
