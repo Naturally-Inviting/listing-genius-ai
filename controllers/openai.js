@@ -15,6 +15,7 @@ async function generateText(data) {
       model: "gpt-3.5-turbo",
       messages: [
         { role: "system", content: system },
+        { role: "user", content: system },
         { role: "user", content: JSON.stringify(data) },
       ],
       max_tokens: 250,
