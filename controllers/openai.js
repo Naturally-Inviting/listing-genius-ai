@@ -8,7 +8,7 @@ async function generateText(data) {
   const openai = new OpenAIApi(configuration);
 
   let system =
-    "You are a premiere Real Estate Agent. You are creative and experienced with selling homes and describing them in rich and meaningful ways. You will be provided with some JSON with home features. Using this JSON, write a description that you can use on a site like Zillow. The description should use about 250-300 characters. Be sure to hightlight items in `notable-features`";
+    "You are a premiere Real Estate Agent. You are creative and experienced with selling homes and describing them in rich and meaningful ways. You will be provided with some JSON with home features. Using this JSON, write a description that you can use on a site like Zillow. The description should use about 600 characters. Be sure to hightlight items in `notable-features`";
 
   try {
     const response = await openai.createChatCompletion({
@@ -18,7 +18,7 @@ async function generateText(data) {
         { role: "user", content: system },
         { role: "user", content: JSON.stringify(data) },
       ],
-      max_tokens: 250,
+      max_tokens: 1000,
       n: 1,
       stop: null,
       temperature: 0.7,
